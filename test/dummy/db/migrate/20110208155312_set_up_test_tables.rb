@@ -297,7 +297,7 @@ class SetUpTestTables < ActiveRecord::Migration
     drop_table :post_versions
     remove_index :versions, column: [:item_type, :item_id]
     drop_table :versions
-    if JsonVersion.table_exists?
+    if JsonVersion.data_source_exists?
       remove_index :json_versions, column: [:item_type, :item_id]
       drop_table :json_versions
     end

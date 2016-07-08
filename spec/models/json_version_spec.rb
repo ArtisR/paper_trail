@@ -2,7 +2,7 @@ require "rails_helper"
 
 # The `json_versions` table tests postgres' `json` data type. So, that
 # table is only created when testing against postgres and ActiveRecord >= 4.
-if JsonVersion.table_exists?
+if JsonVersion.data_source_exists?
 
   describe JsonVersion, type: :model do
     it "should include the `VersionConcern` module to get base functionality" do
